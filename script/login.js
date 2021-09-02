@@ -20,6 +20,8 @@ const callLoginApi = (data) => {
     data: JSON.stringify(data),
     success: function(response){
       sessionStorage.setItem('userId', JSON.stringify(response.data._id));
+      const origin = window.location.origin;
+      window.location.href = `${origin}/main.html`;
     },
     error: function(error){
       alert(`${error.statusText}`);
