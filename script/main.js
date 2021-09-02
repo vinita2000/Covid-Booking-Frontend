@@ -7,6 +7,7 @@ const displayDOM = (labs) => {
   labs.map((lab) => {
     const tempHtml = `
     <div class="card-body">
+      <img src="../images/hospital.png" width="100" height="120">
       <h4 class="card-title">${lab.name}</h4>
       <p class="card-text">${lab.address.name}</p>
       <button class="btn open" id="${lab._id}">Open</button>
@@ -26,6 +27,7 @@ const displayDOM = (labs) => {
 const displayLabDOM = (lab) => {
   let html = `
   <div class="card-body" style="backround-color:#f7e1f5;">
+    <img src="../images/hospital.png" width="150" height="170">
     <h4 class="card-title">${lab.name}</h4>
     <p class="card-text">${lab.address.name}</p>
   </div>
