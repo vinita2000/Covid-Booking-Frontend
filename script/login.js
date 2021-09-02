@@ -22,7 +22,7 @@ const callLoginApi = (data) => {
       sessionStorage.setItem('userId', JSON.stringify(response.data._id));
       let href = window.location.href;
       href = href.replace('login', 'main');
-      console.log(href);
+      window.location.href = href;
     },
     error: function(error){
       alert(`${error.statusText}`);
