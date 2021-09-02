@@ -13,7 +13,7 @@ const displayProfileDOM = (profile) => {
   `;
   let bookingTable = `
   <div class="bookingTable">
-  <table>
+  <table class="profileTable">
   <tr>
     <td class="tableHeading">LAB</td>
     <td class="tableHeading">TEST</td>
