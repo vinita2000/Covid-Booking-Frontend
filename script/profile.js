@@ -1,6 +1,7 @@
 
 // display user profile in DOM
 const displayProfileDOM = (profile) => {
+  console.log('called');
   let html = `
     <div class="profileContainer">
       <div>
@@ -64,6 +65,7 @@ const getUserProfile = (userId) => {
 
 // profile tab 
 $("#pills-profile-tab").click(function(e){
+  $( "#pills-home" ).empty();
   let userId = sessionStorage.getItem('userId');
   userId = JSON.parse(userId);
   getUserProfile(userId);

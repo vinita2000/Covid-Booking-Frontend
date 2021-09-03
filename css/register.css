@@ -1,0 +1,12 @@
+.map{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map button{
+  width: 150px;
+  justify-self: center;
+  align-self: center;
+}

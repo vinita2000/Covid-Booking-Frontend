@@ -14,10 +14,51 @@
   margin-top: 30px;
 }
 
+.test{
+  background-color: rgb(231, 219, 210);
+  margin-left: 5px;
+  border-radius: 5%;
+  padding: 10px;
+}
+
+.distance{
+  background-color: rgb(240, 233, 133);
+  width: 70px;
+  align-self: center;
+  border-radius: 100%;
+}
+
+#pills-home{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} 
+
 .card-body{
-  background-color: rgb(224, 199, 219);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: rgb(224, 199, 219); */
+  background-color: rgb(231, 219, 210);
   margin: 5px;
   align-self: center;
+  width: 700px;
+} 
+
+.card-body img{
+  align-self: center;
+}
+
+@media screen and (min-width: 520px) and (max-width: 720px)  {
+  .card-body{
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 480px)  {
+  .card-body{
+    width: 300px;
+  }
 }
 
 .book{

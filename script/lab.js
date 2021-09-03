@@ -10,6 +10,7 @@ const displayDOM = (labs) => {
       <img src="./images/hospital.png"" width="100" height="120" class="image">
       <h4 class="card-title">${lab.name}</h4>
       <p class="card-text">${lab.address.name}</p>
+      <p class="distance">${parseInt((lab.distance)/1000)} KM</p>
       <button class="btn open" id="${lab._id}">Open</button>
     </div>`;
     html += tempHtml;
@@ -75,6 +76,7 @@ const displayBookingDOM = (booking) => {
   </table>
   `;
   $('#modal-booking-details').html(html);
+  getLabDetails(booking.labID);
 };
 
 const bookSlot = (userId, labId, test) => {
@@ -86,6 +88,10 @@ const bookSlot = (userId, labId, test) => {
       "Content-Type": "application/json"
     },
     success: function(response){
+      if (!response.data) {
+        alert('No Slots Available');
+        return;
+      }
       displayBookingDOM(response.data.bookings[response.data.bookings.length - 1]);
     },
     error: function(error){
@@ -130,6 +136,7 @@ const getNearByLabs = (userId) => {
 
 // home tab 
 $("#pills-home-tab").click(function(e){
+  $( "#pills-profile" ).empty();
   let userId = sessionStorage.getItem('userId');
   userId = JSON.parse(userId);
   // load nearby labs
